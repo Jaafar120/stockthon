@@ -1,5 +1,4 @@
-#كتابة_حمد
-#ترجمة_وتعريب_فريق_تيبثون
+
 import os
 from datetime import datetime
 
@@ -24,7 +23,7 @@ GIT_TEMP_DIR = "./temp/"
 
 
 @sbb_b.ar_cmd(
-    pattern="تيبثون$",
+    pattern="ستوك ثون$",
     command=("repo", plugin_category),
     info={
         "header": "Source code link of sbb_b",
@@ -34,11 +33,11 @@ GIT_TEMP_DIR = "./temp/"
     },
 )
 async def source(e):
-    "سورس تيبثون"
+    "سورس ستوك ثون"
     await edit_or_reply(
         e,
-        "اضغط [هنا](t.me/Tepthon) لفتح قناة السورس\
-        \nاضغط [هنا](t.me/Tepthon_Help) كروب الدعم",
+        "اضغط [هنا](t.me/stockthon) لفتح قناة السورس\
+        \nاضغط [هنا](t.me/stockthon_group) كروب الدعم",
     )
 
 

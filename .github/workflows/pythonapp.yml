@@ -1,4 +1,4 @@
-name: TepthonChecker
+name: stockthonChecker
 
 on: [push, pull_request]
 

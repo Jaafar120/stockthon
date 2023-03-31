@@ -26,7 +26,7 @@ from .pluginmanager import load_module
 from .tools import create_supergroup
 
 ENV = bool(os.environ.get("ENV", False))
-LOGS = logging.getLogger("اعداد تيبثون")
+LOGS = logging.getLogger("اعداد ستوك ثون")
 cmdhr = Config.COMMAND_HAND_LER
 
 if ENV:
@@ -54,9 +54,9 @@ async def saves():
     except Exception as e:
         print(str(e))
     try:
-        await sbb_b(JoinChannelRequest("@Tepthon"))
-        await sbb_b(JoinChannelRequest("@P17_12"))
-        await sbb_b(JoinChannelRequest("@Tepthon_Help"))
+        await sbb_b(JoinChannelRequest("@Stockthon"))
+        await sbb_b(JoinChannelRequest("@stockth"))
+        await sbb_b(JoinChannelRequest("@stockthon_group"))
     except BaseException:
         pass
 
@@ -68,7 +68,7 @@ async def mybot():
     f"ـ {rz_ment}"
     f"⪼ هذا هو بوت خاص بـ {rz_ment} يمكنك التواصل معه هنا"
     starkbot = await sbb_b.tgbot.get_me()
-    perf = "[ تيبثون ]"
+    perf = "[ ستوك ثون ]"
     bot_name = starkbot.first_name
     botname = f"@{starkbot.username}"
     if bot_name.endswith("Assistant"):
@@ -93,9 +93,9 @@ async def startupmessage():
         if BOTLOG:
             Config.JMTHONLOGO = await sbb_b.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/f1e757035e56613a9ef92.jpg",
-                caption="**تم تشغيل سورس تيبثون بنجاح لعرض الاوامر ارسل .الاوامر**",
-                buttons=[(Button.url("كروب المساعدة", "https://t.me/Tepthon_Help"),)],
+                "https://telegra.ph/file/b075c449fc0ecdedc8190.png",
+                caption="**تم تشغيل سورس ستوك ثون بنجاح لعرض الاوامر ارسل .الاوامر**",
+                buttons=[(Button.url("كروب المساعدة", "https://t.me/stockthon_group"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -236,9 +236,9 @@ async def verifyLoggerGroup():
             LOGS.error("هنالك خطا ما للتعرف على فار كروب الحفظ\n" + str(e))
     else:
         descript = "⪼ هذه هي مجموعه الحفظ الخاصه بك لا تحذفها ابدا  𓆰."
-        photobt = await sbb_b.upload_file(file="razan/pic/tepthon.jpeg")
+        photobt = await sbb_b.upload_file(file="razan/pic/stockthon.jpeg")
         _, groupid = await create_supergroup(
-            "كروب بوت تيبثون", sbb_b, Config.TG_BOT_USERNAME, descript, photobt
+            "كروب بوت ستوك ثون", sbb_b, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("تم انشاء كروب الحفظ بنجاح")
@@ -261,7 +261,7 @@ async def verifyLoggerGroup():
             LOGS.error("حدث خطأ اثناء التعرف على كروب التخزين\n" + str(e))
     else:
         descript = "❃ لا تحذف او تغادر المجموعه وظيفتها حفظ رسائل التي تأتي على الخاص"
-        photobt = await sbb_b.upload_file(file="razan/pic/tepthon.jpeg")
+        photobt = await sbb_b.upload_file(file="razan/pic/stockthon.jpeg")
         _, groupid = await create_supergroup(
             "مجموعة التخزين", sbb_b, Config.TG_BOT_USERNAME, descript, photobt
         )

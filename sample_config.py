@@ -1,5 +1,4 @@
-# لا تعدل اي شي من الملف اذا تستخدم سيرفر
-# اذا تستخدم هيروكو الفار يكون داخل القوس تكدر تاخذه وتضيف قيمته من اعدادات هيروكو
+
 import os
 from typing import Set
 
@@ -32,7 +31,7 @@ class Config(object):
     EXTERNAL_REPO = os.environ.get("EXTERNAL_REPO", None)
     if bool(EXTERNAL_REPO and (EXTERNAL_REPO.lower() != "false")):
         if not url(EXTERNAL_REPO):
-            EXTERNAL_REPO = "https://github.com/Tepthonee/TepPlugins"
+            EXTERNAL_REPO = "https://github.com/Jaafar120/TepPlugins"
     else:
         EXTERNAL_REPO = None
     # فارات الميوزك
@@ -72,7 +71,7 @@ class Config(object):
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "jmthon")
     # هنا خلفيه مال تلجراف او بعض الاوامر
     THUMB_IMAGE = os.environ.get(
-        "THUMB_IMAGE", "https://graph.org/file/524d0431f17854870e678.jpg"
+        "THUMB_IMAGE", "https://telegra.ph/file/b075c449fc0ecdedc8190.png"
     )
     # هنا اسم الملف الي ما تريده يتثبت عندك
     NO_LOAD = list(os.environ.get("NO_LOAD", "").split())
@@ -163,4 +162,4 @@ class Development(Config):
     LOGGER = True
 
 
-# https:t.me/Tepthon
+# https:t.me/StockThon

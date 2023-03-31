@@ -120,7 +120,7 @@ async def ytdl_download_callback(c_q: CallbackQuery):  # sourcery no-metrics
     )
     yt_url = BASE_YT_URL + yt_code
     await c_q.edit(
-        f"<b>⬇️ جار تحميل {media_type} ....</b>\n\n🔗  <a href={yt_url}> <b>الؤابط</b></a>\n🆔  <b>الصيغة</b> : {disp_str}",
+        f"<b>⬇️ جار تحميل {media_type} ....</b>\n\n🔗  <a href={yt_url}> <b>الرابط</b></a>\n🆔  <b>الصيغة</b> : {disp_str}",
         parse_mode="html",
     )
     if downtype == "v":

@@ -1,5 +1,4 @@
-#حقوق_تيبثون_العربي
-#Tepthon_Userbot
+
 import os
 import random
 

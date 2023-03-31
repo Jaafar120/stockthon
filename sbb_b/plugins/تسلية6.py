@@ -1,6 +1,3 @@
-#  =============================
-#  == sbb_b - QHR_1  -  RR7PP =
-#  =============================
 
 
 import asyncio
@@ -48,12 +45,12 @@ async def nekobot(cat):
 
 
 @sbb_b.ar_cmd(
-    pattern="مودي(?:\s|$)([\s\S]*)",
-    command=("مودي", plugin_category),
+    pattern="ستوك(?:\s|$)([\s\S]*)",
+    command=("ستوك", plugin_category),
     info={
         "header": "modi tweet sticker with given custom text",
-        "usage": "{tr}مودي <نص>",
-        "examples": "{tr}مودي جمثون الاصلي",
+        "usage": "{tr}ستوك <نص>",
+        "examples": "{tr}ستوك ثون الاصلي",
     },
 )
 async def nekobot(cat):
@@ -68,7 +65,7 @@ async def nekobot(cat):
             text = reply.message
         else:
             return await edit_delete(cat, "**⌯︙يجـب كـتابة نـص اولا", 5)
-    cate = await edit_or_reply(cat, "⌯︙جاري طلب تغريدة من مودي...")
+    cate = await edit_or_reply(cat, "⌯︙جاري طلب تغريدة من ستوك...")
     text = deEmojify(text)
     await asyncio.sleep(2)
     catfile = await moditweet(text)

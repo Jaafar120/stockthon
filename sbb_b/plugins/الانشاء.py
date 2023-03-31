@@ -11,9 +11,9 @@ async def _(event):
     type_of_group = event.pattern_match.group(1)
     group_name = event.pattern_match.group(2)
     if type_of_group == "قناة":
-        descript = "تم صنع هذه القناة بواسطة سورس تيبثون"
+        descript = "تم صنع هذه القناة بواسطة سورس ستوك ثون"
     else:
-        descript = "تم صنع المجموعة باستخدام سورس تيبثون"
+        descript = "تم صنع المجموعة باستخدام سورس ستوك ثون"
     if type_of_group == "مجموعة عادية":
         try:
             result = await event.client(

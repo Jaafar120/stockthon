@@ -37,7 +37,7 @@ async def install(event):
             else:
                 os.remove(downloaded_file_name)
                 await edit_delete(
-                    event, "**- عذرا اسم هذا الملف بالاصل موجود دفي السورس**", 10
+                    event, "**- عذرا اسم هذا الملف بالاصل موجود في السورس**", 10
                 )
         except Exception as e:
             await edit_delete(event, f"**خطأ:**\n`{e}`", 10)

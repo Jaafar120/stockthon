@@ -271,5 +271,4 @@ async def _(event):  # sourcery no-metrics  # sourcery skip: low-code-quality
     await mone.edit(
         f"**•  تم التحميل بتنسيق {ms} الثواني.**\n**•  تم التحميل إلى :- **  `{os.path.relpath(file_name,os.getcwd())}`\n   "
     )
-#سورس تيبثون العربي
-#المطور : @PPF22 #thank you userbot
+

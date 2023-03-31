@@ -10,7 +10,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
-UPSTREAM_REPO = "https://github.com/Tepthonee/thetepthon"
+UPSTREAM_REPO = "https://github.com/Jaafar120/stockthon"
 T = Config.COMMAND_HAND_LER
 
 requirements_path = path.join(
@@ -29,7 +29,7 @@ async def gen_chlog(repo, diff):
 
 
 async def print_changelogs(event, ac_br, changelog):
-    changelog_str = f"𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ يوجـد تحـديث جديد لسورس تيـبـثون ༗.**\n\n`{changelog}`\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n 𓆰 𝙎𝙊𝙐𝙍𝘾𝞝 𝘿𝙀𝙑 - @PPF22 𓆪"
+    changelog_str = f"𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ يوجـد تحـديث جديد لسورس ستوك ثون ༗.**\n\n`{changelog}`\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n 𓆰 𝙎𝙊𝙐𝙍𝘾𝞝 𝘿𝙀𝙑 - @B99B2 𓆪"
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
         with open("output.txt", "w+") as file:
@@ -82,10 +82,10 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 heroku_app = app
                 break
         if heroku_app is None:
-            await event.edit(f"{txt}\n" "بيانات اعتماد هيروكو غير صالحة لتنصيب تيـبـثون")
+            await event.edit(f"{txt}\n" "بيانات اعتماد هيروكو غير صالحة لتنصيب ستوك ثون")
             return repo.__del__()
         await event.edit(
-            "**تنصيب تحديث تيـبـثون قيد التقدم ، يرجى الانتظار حتى تنتهي العملية ، وعادة ما يستغرق التحديث من 4 إلى 5 دقائق.**"
+            "**تنصيب تحديث ستوك ثون قيد التقدم ، يرجى الانتظار حتى تنتهي العملية ، وعادة ما يستغرق التحديث من 4 إلى 5 دقائق.**"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -122,7 +122,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ تم التحديث بنجاح ✅**\n ** جارٍ إعادة تشغيل بوت تيـبـثون ، انتظر 𓆰.**"
+        "𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ تم التحديث بنجاح ✅**\n ** جارٍ إعادة تشغيل بوت ستوك ثون ، انتظر 𓆰.**"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -133,18 +133,18 @@ async def update(event, repo, ups_rem, ac_br):
 @bot.on(admin_cmd(outgoing=True, pattern=r"تحديث($| (الان|البوت))"))
 @bot.on(sudo_cmd(pattern="تحديث($| (الان|البوت))", allow_sudo=True))
 async def upstream(event):
-    "بالنسبة لأمر التحديث ، تحقق مما إذا كان بوت تيـبـثون محدثًا ، أو قم بالتحديث إذا تم بتحديثه"
+    "بالنسبة لأمر التحديث ، تحقق مما إذا كان بوت ستوك ثون محدثًا ، أو قم بالتحديث إذا تم بتحديثه"
     conf = event.pattern_match.group(1).strip()
     event = await edit_or_reply(
         event,
-        "𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ جاري البحث عن التحديثات  🌐.. 𓆰،**",
+        "𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ جاري البحث عن التحديثات  🌐.. 𓆰،**",
     )
     off_repo = UPSTREAM_REPO
     force_update = False
     if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
         return await edit_or_reply(
             event,
-            "𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ اضبط المتغيرات المطلوبة أولاً لتحديث بوت تيـبـثون 𓆰،**",
+            "𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ اضبط المتغيرات المطلوبة أولاً لتحديث بوت ستوك ثون 𓆰،**",
         )
     try:
         txt = "`عفوًا .. لا يمكن لبرنامج التحديث المتابعة بسبب "
@@ -191,20 +191,20 @@ async def upstream(event):
     # Special case for deploy
     if conf == "البوت":
         await event.edit(
-            "𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تنصيب التحديث  انتظر 🌐 𓆰،**"
+            "𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تنصيب التحديث  انتظر 🌐 𓆰،**"
         )
         await deploy(event, repo, ups_rem, ac_br, txt)
         return
     if changelog == "" and not force_update:
         await event.edit(
-            "\n𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽   - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ سورس تيـبـثون محدث لأخر اصدار ༗. **"
+            "\n𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽   - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ سورس ستوك ثون محدث لأخر اصدار ༗. **"
         )
         return repo.__del__()
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            "𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n⪼ اضغط هنا **للتحديث السريع ↫ **[`{}تحديث الان`] او اضغط هنا **لتنصيب التحديث** وقد يستغرق 5 دقائق ↫ [`{}تحديث البوت`]".format(T, T)
+            "𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n⪼ اضغط هنا **للتحديث السريع ↫ **[`{}تحديث الان`] او اضغط هنا **لتنصيب التحديث** وقد يستغرق 5 دقائق ↫ [`{}تحديث البوت`]".format(T, T)
         )
 
     if force_update:
@@ -213,7 +213,7 @@ async def upstream(event):
         )
     if conf == "الان":
         await event.edit(
-            "𓆰 sᴏᴜʀᴄᴇ 𝚃𝙴𝙿𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تحديث بوت تيـبـثون انتظر 🌐..𓆰،**"
+            "𓆰 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝚃𝙾𝙲𝙺𝚃𝙷𝙾𝙽  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تحديث بوت ستوك ثون انتظر 🌐..𓆰،**"
         )
         await update(event, repo, ups_rem, ac_br)
     return

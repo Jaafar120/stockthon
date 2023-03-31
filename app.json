@@ -1,13 +1,13 @@
 {
-  "name": "سورس تيبثون - TEPTHON USERBOT",
-  "description": "اللهم صلي وسلم وبارك على سيدنا محمد",
-  "logo": "https://telegra.ph/file/3e452cf6805d6dc732a59.jpg",
+  "name": "سورس ستوك ثون - STOCKTHON USERBOT",
+  "description": "𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒐𝒖𝒓𝒄𝒆 𝒔𝒕𝒐𝒄𝒌𝒕𝒉𝒐𝒏🝳",
+  "logo": "https://telegra.ph/file/b075c449fc0ecdedc8190.png",
   "keywords": [
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Tepthonee/thetepthon",
+  "repository": "https://github.com/Jaafar120/stockthon",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {

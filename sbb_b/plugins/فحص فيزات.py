@@ -1,7 +1,4 @@
-""" 
-CC Visa @Tepthon
 
-"""
 
 import asyncio
 import os
@@ -127,5 +124,4 @@ async def song2(event):
         await event.client.send_message(event.chat_id, response.message)
         await tep.delete()
 
-#كتابة_وتعديل_حمد
-#hmd.txt
+

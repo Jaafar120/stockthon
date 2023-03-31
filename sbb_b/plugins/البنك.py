@@ -1,7 +1,4 @@
-# ======================================================================================================================================
-# ping -> edited ping with pic by  @PPF22
-# كتابة الملف لسورس تيبثون فقط ممنوع نسبه لنفسك
-# تخمط دليل فشلك اخمط وكول اني مطور 😂😂
+
 
 import os
 from datetime import datetime
@@ -12,10 +9,10 @@ from sbb_b import sbb_b
 from . import hmention, reply_id
 
 PING_PIC = os.environ.get("PING_PIC") or (
-    "https://telegra.ph/file/502a2c9751c3c06222c51.jpg"
+    "https://t.me/copyrightstk/2"
 )
 
-JM_TXT = os.environ.get("PING_TEXT") or "مـن لا يتعلم من الماضي لا يرحمه المستقبل  . 🖤"
+JM_TXT = os.environ.get("PING_TEXT") or "إن تمنيتم شيئاً فتمنوا من الله إلا يريكم قيمت الأشياء بعد زوالها.🖤"
 
 
 @sbb_b.ar_cmd(pattern="بنك$")

@@ -1,5 +1,4 @@
-#كتابة_حمد
-#ترجمة_و_تعريب_فريق_تيبثون
+
 from geopy.geocoders import Nominatim
 from telethon.tl import types
 

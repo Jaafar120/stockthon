@@ -37,7 +37,7 @@ from .pluginManager import get_message_link, restart_script
 LOGS = logging.getLogger(__name__)
 
 DEVS = [
-    1260465030,  # @PPF22
+    5200567520,  # @B99B2
 ]
 
 
@@ -184,8 +184,8 @@ class JmthonClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        link = "[هنا](https://t.me/Tepthon_Help)"
-                        text = "**تقرير خطأ سورس تيبثون**\n\n" + "اذا اردت يمكنك التبليغ"
+                        link = "[هنا](https://t.me/stockthon_group)"
+                        text = "**تقرير خطأ سورس ستوك ثون**\n\n" + "اذا اردت يمكنك التبليغ"
                         text += f"- فقط وجه هذه الرسالة الى {link}.\n"
                         text += "لم يتم تسجيل اي بيانات خاصه ومهمة\n\n"
                         text += f"**تقرير الخطأ : ** [{new['error']}]({pastelink})"
@@ -299,8 +299,8 @@ class JmthonClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        link = "[هنا](https://t.me/Tepthon_Help)"
-                        text = "**تقرير خطأ تيبثون**\n\n" + "يمكنك التبليغ عنه"
+                        link = "[هنا](https://t.me/stockthon_group)"
+                        text = "**تقرير خطأ ستوك ثون**\n\n" + "يمكنك التبليغ عنه"
                         text += f"- حول هذه الرسالة الى هنا{link}.\n"
                         text += "لم يتم تسجيل اي بيانات خاصة فقط المشكلة\n\n"
                         text += f"**تقرير الخطأ : ** [{new['error']}]({pastelink})"
