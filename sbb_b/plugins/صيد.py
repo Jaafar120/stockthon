@@ -1,4 +1,4 @@
-# by: t.me/Tepthon  ~ t.me/PPF22
+# by: t.me/stockthon  ~ t.me/B99B2
 
 import asyncio
 import random
@@ -105,7 +105,7 @@ def gen_user(choice):
 async def _(event):
     await event.edit(
         """
-أوامر الصيد الخاصة بسورس تيبثون : 
+أوامر الصيد الخاصة بسورس ستوك ثون : 
 
 ٴ— — — — — — — — — —
 
@@ -124,7 +124,7 @@ async def _(event):
 الامر:  `.حالة التثبيت`
 • لمعرفة عدد المحاولات للصيد
 
-@Tepthon  - channle userbot 
+@stockthon  - channle userbot 
 
 """
     )
@@ -143,8 +143,8 @@ async def hunterusername(event):
         try:
             ch = await sbb_b(
                 functions.channels.CreateChannelRequest(
-                    title="Tepthon HUNTER - صيد تيبثون",
-                    about="This channel to hunt username by - @Tepthon ",
+                    title="stockthon HUNTER - صيد ستوك ثون",
+                    about="This channel to hunt username by - @stockthon ",
                 )
             )
             ch = ch.updates[1].channel_id
@@ -170,7 +170,7 @@ async def hunterusername(event):
                 )
                 await event.client.send_message(
                     event.chat_id,
-                    f"- Done : @{username} !\n- By : @PPF22 - @Tepthon !\n- Hunting Log {trys2[0]}",
+                    f"- Done : @{username} !\n- By : @B99B2 - @stockthon !\n- Hunting Log {trys2[0]}",
                 )
                 break
             except telethon.errors.rpcerrorlist.UsernameInvalidError:
@@ -213,8 +213,8 @@ async def _(event):
         try:
             ch = await sbb_b(
                 functions.channels.CreateChannelRequest(
-                    title="Tepthon HUNTER - صيد تيبثون",
-                    about="This channel to hunt username by - @Tepthon ",
+                    title="stockthon HUNTER - صيد ستوك ثون",
+                    about="This channel to hunt username by - @stockthon ",
                 )
             )
             ch = ch.updates[1].channel_id
@@ -238,7 +238,7 @@ async def _(event):
                 )
                 await event.client.send_message(
                     event.chat_id,
-                    f"- Done : @{username} !\n- By : @PPF22 - @Tepthon !\n- Hunting Log {trys2[0]}",
+                    f"- Done : @{username} !\n- By : @B99B2 - @stockthon !\n- Hunting Log {trys2[0]}",
                 )
                 break
             except telethon.errors.rpcerrorlist.UsernameInvalidError:

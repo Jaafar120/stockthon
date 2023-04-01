@@ -1,4 +1,4 @@
-# updater for TepthonArabic
+
 
 import asyncio
 import sys

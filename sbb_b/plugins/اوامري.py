@@ -23,7 +23,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             buttons = [
                 [Button.inline("معلومات ستوك ثون", data="AOMRDB")],
                 [
-                    Button.inline("البوت", data="eeeeq"),
+                    Button.inline("البوت", data="BOTCMD4"),
                     Button.inline("الكروب", data="admincmd_s")
                 ],
                 [
@@ -63,7 +63,7 @@ async def _(event):
     butze = [
                 [Button.inline("معلومات ستوك ثون", data="AOMRDB")],
                 [
-                    Button.inline("البوت", data="eeeeq"),
+                    Button.inline("البوت", data="BOTCMD4"),
                     Button.inline("الكروب", data="admincmd_s")
                 ],
                 [
