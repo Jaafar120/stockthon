@@ -1,11 +1,25 @@
-FROM Jaafar120/stockthon:slim-buster
+FROM python:3.10-slim-bookworm
 
- #clonning repo 
- RUN git clone https://github.com/Jaafar120/stockthon.git /root/sbb_b
- #working directory 
- WORKDIR /root/sbb_b
- RUN apk add --update --no-cache p7zip
- # Install requirements
- RUN pip3 install --no-cache-dir -r requirements.txt
- ENV PATH="/home/sbb_b/bin:$PATH"
- CMD ["python3","-m","sbb_b"]
+# أدوات النظام المطلوبة (مع libpq-dev لبناء psycopg2)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    p7zip-full \
+    ffmpeg \
+    curl \
+    ca-certificates \
+    libpq-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /root/sbb_b
+
+COPY requirements.txt .
+
+RUN pip3 install --upgrade pip setuptools wheel \
+    && pip3 install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+ENV PATH="/root/.local/bin:$PATH"
+
+CMD ["python3", "-m", "sbb_b"]
