@@ -1,9 +1,21 @@
-flyctl secrets set \
-  APP_ID="8824247" \
-  API_HASH="6d142ff6f9325655b92dd81c995cd1d4" \
-  STRING_SESSION="1ApWapzMBu1YWX5-4hL1frRhd1cRUA-fAjrEbUtFGjMVire8eqpPbvEpE4qTYUT4iiPUk9a2wmUVaz6PmExfZnS-PH6ZUmEz7S4nJkjgi_0t_oScsI4GQusYY97jI8UKTKT6SwUBFyZF5wDEm5vIjv7eBL-mUkv17OPEZkY0kul8Y6-P8cwmn0ic-T-ZGLtQXVWceWc1yWl-nK5lj4rll7la0TrDKLjtnZ5oNb4S_oUn0C9jdxKfYmGr98deck_sT6Rg96yDKFoIxD4LaSS3pbGNc_9a8V6PIbBnG-CIYwqJFAiFuIUCaRfglhigQ6uT3gKzmrIG-Whm2hUK6sQWHxPIa3ztUTlE=" \
-  TG_BOT_TOKEN="7550472376:AAHYQ-eBABAQCYoMMTunzyizXAkr5r8xNcs" \
-  TG_BOT_USERNAME="@QRRKBOT" \
-  ALIVE_NAME="Jaafar" \
-  OWNER_ID="6221975079" \
-  TZ="Asia/Baghdad"
+app = "stockthon"
+primary_region = "fra"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  ALIVE_NAME = "@IQTHON"
+  TZ = "Asia/Baghdad"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
