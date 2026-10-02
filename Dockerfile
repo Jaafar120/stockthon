@@ -1,11 +1,27 @@
-FROM Jaafar120/stockthon:slim-buster
+FROM python:3.10-slim-buster
 
- #clonning repo 
- RUN git clone https://github.com/Jaafar120/stockthon.git /root/sbb_b
- #working directory 
- WORKDIR /root/sbb_b
- RUN apk add --update --no-cache p7zip
- # Install requirements
- RUN pip3 install --no-cache-dir -r requirements.txt
- ENV PATH="/home/sbb_b/bin:$PATH"
- CMD ["python3","-m","sbb_b"]
+# أدوات النظام المطلوبة
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    p7zip-full \
+    ffmpeg \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# مجلد العمل
+WORKDIR /root/sbb_b
+
+# نسخ المتطلبات أولًا (لاستفادة من cache)
+COPY requirements.txt .
+
+# تثبيت المتطلبات
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# نسخ بقية المشروع
+COPY . .
+
+# مسار افتراضي
+ENV PATH="/root/.local/bin:$PATH"
+
+# التشغيل
+CMD ["python3", "-m", "sbb_b"]
